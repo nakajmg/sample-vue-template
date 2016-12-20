@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{name}}</title>
+</head>
+<body>
+  <p>\{{name}}</p>
+  <p>{{description}}</p>
+  <p>{{author}}</p>
+  {{#question1}}<p>question1はYes</p>{{/question1}}
+
+  {{#question2}}
+  <p>
+    question2: {{question2_choice}}
+    {{#if_eq question2_choice "choice3"}}（choice3が選択されたときに表示される）{{/if_eq}}
+  </p>
+  {{/question2}}
+
+  <p>
+  {{#each plugins}}
+    {{@key}}: {{this}}
+  {{/each}}
+  </p>
+  {{#if plugins.vuex}}vuex is enabled{{/if}}
+  {{#isEnabled plugins 'vue-router'}}vue-router is enabled{{/isEnabled}}
+</body>
+</html>
