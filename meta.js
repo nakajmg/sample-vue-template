@@ -19,13 +19,14 @@ module.exports = {
       require: true,
       message: "question1:"
     },
-    question2: {
+    pre_question2: {
       type: "confirm",
       required: true,
-      message: "question2"
+      message: "pre_question2"
     },
-    question2_choice: {
-      type: "list",
+    question2: {
+      when: 'pre_question2',
+      type: 'list',
       message: 'Choose one from the list',
       choices: [
         "choice1",
